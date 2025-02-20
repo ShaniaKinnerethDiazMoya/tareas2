@@ -1,0 +1,32 @@
+LDmicro0.2
+MICRO=Atmel AVR ATmega328 32-Pin packages
+CYCLE=10000 us at Timer1, YPlcCycleDuty:0, ConfigurationWord(s):0xAD1A72D00000000
+CRYSTAL=16000000 Hz
+BAUD=9600 Hz, RATE=1000000 Hz, SPEED=100000 Hz
+COMPILED=C:\Users\DELL\Desktop\6to semestre\sistemas programambles\anclaje.hex
+COMPILER=IHEX
+
+PULL-UP LIST
+    PB: 0xFFFFFFFF 
+    PC: 0xFFFFFFFF 
+    PD: 0xFFFFFFFF 
+END
+
+VAR LIST
+END
+
+IO LIST
+    XBOTON1 at 32 0 0
+    XBOTON2 at 2 0 0
+    YLED at 14 0 0
+END
+
+PROGRAM
+RUNG 1
+  PARALLEL
+    CONTACTS XBOTON1 0 0
+    CONTACTS YLED 0 0
+  END
+  CONTACTS XBOTON2 1 0
+  COIL YLED 0 0 0 0
+END
